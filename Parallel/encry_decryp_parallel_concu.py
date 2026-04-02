@@ -1,7 +1,3 @@
-""""
-encry_decryp_paral_concu.py — Cifratura/decifratura DES con ProcessPoolExecutor da CSV
-Versione con pandas.read_csv()
-"""
 
 import pandas as pd
 from Crypto.Cipher import DES
@@ -17,12 +13,10 @@ from pathlib import Path
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
 # ── Configurazione ──────────────────────────────────────────────
-ENCRYPTION_KEY = "MBertini"
-CSV_PATH       = "passwords.csv"     # Cambia con "passwords_custom_valid.csv" se vuoi
+ENCRYPTION_KEY = "BORISPANE"
+CSV_PATH       = "passwords.csv"   
 PASSWORD_COL   = "password"
 
-
-# ── Lettura CSV con pandas ──────────────────────────────────────
 
 def load_passwords_from_csv(filepath: str, column: str = "password") -> list[str]:
     path = Path(filepath)
@@ -42,8 +36,6 @@ def load_passwords_from_csv(filepath: str, column: str = "password") -> list[str
     logging.info(f"Password caricate: {len(passwords):,}  da '{filepath}'")
     return passwords.tolist()
 
-
-# ── Funzioni DES (top-level per pickle) ─────────────────────────
 
 def encrypt_password(password: str, key: str) -> str:
     padded = password[:8].ljust(8, "\x00")
