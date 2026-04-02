@@ -1,5 +1,3 @@
-"""encry_decrypt_paral_mulpro.py — Cifratura/decifratura DES con multiprocessing da CSV"""
-
 from Crypto.Cipher import DES
 import base64
 import csv
@@ -13,8 +11,8 @@ from pathlib import Path
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
 # ── Configurazione ──────────────────────────────────────────────
-ENCRYPTION_KEY = "MBertini"
-CSV_PATH       = "passwords.csv"     # Cambia con "passwords_custom_valid.csv" se vuoi
+ENCRYPTION_KEY = "NONOPANE"
+CSV_PATH       = "passwords.csv"    
 PASSWORD_COL   = "password"
 
 
@@ -40,7 +38,7 @@ def load_passwords_from_csv(filepath: str, column: str = "password") -> list[str
     return passwords
 
 
-# ── Funzioni DES (top-level per pickle) ─────────────────────────
+# ── Funzioni DES 
 
 def encrypt_password(password: str, key: str) -> str:
     padded = password[:8].ljust(8, "\x00")
