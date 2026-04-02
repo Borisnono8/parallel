@@ -9,8 +9,8 @@ from pathlib import Path
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
 # ── Configurazione ──────────────────────────────────────────────
-ENCRYPTION_KEY = "MBertini"          # Deve essere esattamente 8 byte
-CSV_PATH       = "passwords.csv"     # Cambia con "passwords_custom_valid.csv" se vuoi
+ENCRYPTION_KEY = "MBertini"          # Deve essere esattamente 8 bytes
+CSV_PATH       = "passwords.csv"     
 PASSWORD_COL   = "password"
 
 
