@@ -13,7 +13,7 @@ from pathlib import Path
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
 # ── Configurazione ──────────────────────────────────────────────
-ENCRYPTION_KEY = "BORISPANE"
+ENCRYPTION_KEY = "NONOPANE"
 CSV_PATH       = "passwords.csv"   
 PASSWORD_COL   = "password"
 
